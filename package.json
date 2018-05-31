@@ -2,9 +2,6 @@
 	"name": "localga",
 	"version": "0.0.1",
 	"description": "Save a local version of your Google Analytics script",
-	"scripts": {
-		"test": "tape test.js"
-	},
 	"bin": {
 		"localga": "./index.js"
 	},
