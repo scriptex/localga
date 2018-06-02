@@ -1,3 +1,15 @@
+[![GitHub stars](https://img.shields.io/github/stars/scriptex/localga.svg?style=social&label=Stars)](https://github.com/scriptex/localga)
+[![GitHub forks](https://img.shields.io/github/forks/scriptex/localga.svg?style=social&label=Fork)](https://github.com/scriptex/localga/network#fork-destination-box)
+[![GitHub release](https://img.shields.io/github/release/scriptex/localga.svg)](https://github.com/scriptex/localga/releases/latest)
+[![GitHub issues](https://img.shields.io/github/issues/scriptex/localga.svg)](https://github.com/scriptex/localga/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/scriptex/localga.svg)](https://github.com/scriptex/localga/commits/master)
+[![npm](https://img.shields.io/npm/dt/localga.svg)](https://www.npmjs.com/package/localga)
+[![npm](https://img.shields.io/npm/v/localga.svg)](https://www.npmjs.com/package/localga)
+[![license](https://img.shields.io/github/license/scriptex/localga.svg)](https://github.com/scriptex/localga)
+[![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/scriptex/localga/README.md)](https://github.com/scriptex/localga/)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/scriptex/localga/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/scriptex/localga/graphs/commit-activity)
+
 # Local GA
 
 Save a local version of your Google Analytics script
