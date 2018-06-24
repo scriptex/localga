@@ -1,32 +1,29 @@
 {
-	"name": "localga",
-	"version": "0.1.0",
-	"description": "Save a local version of your Google Analytics script",
-	"bin": {
-		"localga": "./index.js"
-	},
-	"keywords": [
-		"GA",
-		"Google Analytics",
-		"Cache",
-		"Page Speed Insights",
-		"Anaylitics",
-		"Google Tag Manager"
-	],
-	"main": "./index.js",
-	"repository": "git@github.com:scriptex/localga.git",
-	"bugs": {
-		"url": "https://github.com/scriptex/localga/issues",
-		"email": "scriptex.bg@gmail.com"
-	},
-	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
-	"license": "MIT",
-	"dependencies": {
-		"meow": "^5.0.0",
-		"request": "^2.87.0",
-		"request-promise-native": "^1.0.5"
-	},
-	"devDependencies": {
-		"tape": "^4.9.0"
-	}
+  "name": "localga",
+  "version": "0.1.0",
+  "description": "Save a local version of your Google Analytics script",
+  "bin": {
+    "localga": "./index.js"
+  },
+  "keywords": [
+    "GA",
+    "Google Analytics",
+    "Cache",
+    "Page Speed Insights",
+    "Anaylitics",
+    "Google Tag Manager"
+  ],
+  "main": "./index.js",
+  "repository": "git@github.com:scriptex/localga.git",
+  "bugs": {
+    "url": "https://github.com/scriptex/localga/issues",
+    "email": "scriptex.bg@gmail.com"
+  },
+  "author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
+  "license": "MIT",
+  "dependencies": {
+    "meow": "^5.0.0",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5"
+  }
 }
