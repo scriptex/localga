@@ -65,7 +65,7 @@ const localga = options => {
 
 			writeFileSync(file, data);
 		})
-		.catch(console.log);
+		.catch(console.error);
 };
 
 /**
