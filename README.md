@@ -5,7 +5,6 @@
 [![npm](https://img.shields.io/npm/v/localga.svg)](https://www.npmjs.com/package/localga)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/scriptex/localga/README.md)](https://github.com/scriptex/localga/)
 
-
 # Local GA
 
 Save a local version of your Google Analytics script
@@ -24,13 +23,13 @@ This is where `localga` steps in.
 
 ## Install
 
-```console
+```sh
 npm i localga --save-dev
 ```
 
 or
 
-```console
+```sh
 yarn add localga --dev
 ```
 
@@ -46,7 +45,7 @@ yarn add localga --dev
 
 2. From command line (Install the module globally first):
 
-```console
+```sh
 localga --id UA-XXXXXXXX-Y --folder ./your/js/folder
 ```
 
