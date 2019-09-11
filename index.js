@@ -15,7 +15,7 @@ const FILE_NAME = 'google-analytics-local.js';
 const GA_SCRIPT_URL = 'https://www.googletagmanager.com/gtag/js';
 
 const ANALYTICS_FILE_NAME = 'analytics.js';
-const ANALYTICS_SCRIPT_URL = 'https://www.google-analytics.com/analytics.js';
+const ANALYTICS_SCRIPT_URL = `https://www.google-analytics.com/${ANALYTICS_FILE_NAME}`;
 
 const saveFile = (file, data) => {
 	if (existsSync(file)) {
@@ -28,7 +28,7 @@ const saveFile = (file, data) => {
 const saveAnalyticsFile = folder => {
 	const file = `${folder}/${ANALYTICS_FILE_NAME}`;
 
-	request(ANALYTICS_SCRIPT_URL)
+	return request(ANALYTICS_SCRIPT_URL)
 		.then(data => saveFile(file, data))
 		.catch(console.error);
 };
@@ -49,11 +49,12 @@ const localga = options => {
 	}
 
 	return request(`${GA_SCRIPT_URL}?id=${id}`)
-		.then(data => {
+		.then(async data => {
 			data = data.replace(ANALYTICS_SCRIPT_URL, `${folder}/${ANALYTICS_FILE_NAME}`);
 
 			saveFile(file, data);
-			saveAnalyticsFile(folder);
+
+			await saveAnalyticsFile(folder);
 		})
 		.catch(console.error);
 };
