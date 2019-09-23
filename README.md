@@ -53,7 +53,7 @@ yarn add localga --dev
 localga --id UA-XXXXXXXX-Y --folder ./your/js/folder
 ```
 
-The `localga` module will generate a two new script files called `google-analytics-local.js` and `analytics.js` placed in the folder you provided.
+The `localga` module will generate two new script files called `google-analytics-local.js` and `analytics.js` placed in the folder you provided.
 
 If no `--folder` is specified, the files will be placed in the root of your project.
 
