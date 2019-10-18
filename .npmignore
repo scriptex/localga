@@ -38,3 +38,6 @@ yarn.lock
 renovate.json
 _config.yml
 _.config.yml
+
+# Project specific
+tmp

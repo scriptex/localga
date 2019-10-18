@@ -1,9 +1,6 @@
-#!/usr/bin/env node
-
 /**
  * External dependencies
  */
-const meow = require('meow');
 const request = require('request-promise-native');
 
 /**
@@ -17,30 +14,24 @@ const { writeFileSync, unlinkSync, existsSync } = require('fs');
 const FILE_NAME = 'google-analytics-local.js';
 const GA_SCRIPT_URL = 'https://www.googletagmanager.com/gtag/js';
 
-/**
- * CLI settings
- */
-const cli = meow(
-	`
-Options
-  --id      Your Google Analytics ID
-  --folder  Where to write the file
+const ANALYTICS_FILE_NAME = 'analytics.js';
+const ANALYTICS_SCRIPT_URL = `https://www.google-analytics.com/${ANALYTICS_FILE_NAME}`;
 
-Usage Examples
-  $ localga --id UA-XXXXXXX-Y --folder ./src/js/
-`,
-	{
-		flags: {
-			id: {
-				type: 'string'
-			},
-			folder: {
-				type: 'string',
-				default: './'
-			}
-		}
+const saveFile = (file, data) => {
+	if (existsSync(file)) {
+		unlinkSync(file);
 	}
-);
+
+	writeFileSync(file, data);
+};
+
+const saveAnalyticsFile = folder => {
+	const file = `${folder}/${ANALYTICS_FILE_NAME}`;
+
+	return request(ANALYTICS_SCRIPT_URL)
+		.then(data => saveFile(file, data))
+		.catch(console.error);
+};
 
 /**
  * Generate local version of google analytics script
@@ -57,18 +48,19 @@ const localga = options => {
 		throw new Error('No google analytics ID supplied.');
 	}
 
-	request(`${GA_SCRIPT_URL}?id=${id}`)
-		.then(data => {
-			if (existsSync(file)) {
-				unlinkSync(file);
-			}
+	return request(`${GA_SCRIPT_URL}?id=${id}`)
+		.then(async data => {
+			data = data.replace(ANALYTICS_SCRIPT_URL, `${folder}/${ANALYTICS_FILE_NAME}`);
 
-			writeFileSync(file, data);
+			saveFile(file, data);
+
+			await saveAnalyticsFile(folder);
 		})
 		.catch(console.error);
 };
 
-/**
- * Run the script
- */
-localga(cli.flags);
+module.exports = localga;
+module.exports.localga = localga;
+
+module.exports.FILE_NAME = FILE_NAME;
+module.exports.ANALYTICS_FILE_NAME = ANALYTICS_FILE_NAME;
