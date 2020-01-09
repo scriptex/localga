@@ -27,7 +27,7 @@
 		"request-promise-native": "1.0.8"
 	},
 	"devDependencies": {
-		"tape": "4.12.1"
+		"tape": "4.13.0"
 	},
 	"scripts": {
 		"test": "rm -rf tmp && tape test.js"
