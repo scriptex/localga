@@ -1,7 +1,7 @@
 [![GitHub release](https://img.shields.io/github/release/scriptex/localga.svg)](https://github.com/scriptex/localga/releases/latest)
 [![GitHub issues](https://img.shields.io/github/issues/scriptex/localga.svg)](https://github.com/scriptex/localga/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/scriptex/localga.svg)](https://github.com/scriptex/localga/commits/master)
-[![Build Status](https://travis-ci.org/scriptex/localga.svg?branch=master)](https://travis-ci.org/scriptex/localga)
+[![Build Status](https://travis-ci.com/scriptex/localga.svg?branch=master)](https://travis-ci.com/scriptex/localga)
 [![npm](https://img.shields.io/npm/dt/localga.svg)](https://www.npmjs.com/package/localga)
 [![npm](https://img.shields.io/npm/v/localga.svg)](https://www.npmjs.com/package/localga)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/scriptex/localga/README.md)](https://github.com/scriptex/localga/)
