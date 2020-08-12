@@ -8,8 +8,9 @@ const { existsSync, mkdirSync } = require('fs');
  * Test environment
  */
 const DIR = './tmp';
+const NAME = 'ga-local.js';
 const tape = require('tape');
-const { localga, FILE_NAME, ANALYTICS_FILE_NAME } = require('./');
+const { localga, ANALYTICS_FILE_NAME } = require('./');
 
 /**
  * Init
@@ -20,16 +21,17 @@ if (!existsSync(DIR)) {
 
 localga({
 	id: 'UA-83446952-1',
-	folder: DIR
+	folder: DIR,
+	name: NAME
 }).then(() => {
 	/**
 	 * Test if a master file is created
 	 */
 	tape('Should have a master file', t => {
-		const file = resolve(__dirname, `${DIR}/${FILE_NAME}`);
+		const file = resolve(__dirname, `${DIR}/${NAME}`);
 		const fileExists = existsSync(file);
 
-		t.ok(fileExists, `${FILE_NAME} exists`);
+		t.ok(fileExists, `${NAME} exists`);
 		t.end();
 	});
 

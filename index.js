@@ -12,7 +12,6 @@ const { writeFileSync, unlinkSync, existsSync } = require('fs');
 /**
  * Google analytics root url
  */
-const FILE_NAME = 'google-analytics-local.js';
 const GA_SCRIPT_URL = 'https://www.googletagmanager.com/gtag/js';
 
 const ANALYTICS_FILE_NAME = 'analytics.js';
@@ -42,8 +41,8 @@ const saveAnalyticsFile = folder => {
  * @return {Void}
  */
 const localga = options => {
-	const { id, folder } = options;
-	const file = path.join(folder, FILE_NAME);
+	const { id, folder, name } = options;
+	const file = path.join(folder, name);
 
 	if (!id) {
 		throw new Error('No google analytics ID supplied.');
@@ -63,5 +62,4 @@ const localga = options => {
 module.exports = localga;
 module.exports.localga = localga;
 
-module.exports.FILE_NAME = FILE_NAME;
 module.exports.ANALYTICS_FILE_NAME = ANALYTICS_FILE_NAME;
