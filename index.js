@@ -7,7 +7,7 @@ const path = require('path');
 /**
  * Internal dependencies
  */
-const { writeFileSync, unlinkSync, existsSync } = require('fs');
+const { writeFileSync, unlinkSync, existsSync, mkdirSync } = require('fs');
 
 /**
  * Google analytics root url
@@ -21,6 +21,8 @@ const saveFile = (file, data) => {
 	if (existsSync(file)) {
 		unlinkSync(file);
 	}
+
+	mkdirSync(path.dirname(file), {recursive: true});
 
 	writeFileSync(file, data);
 };
