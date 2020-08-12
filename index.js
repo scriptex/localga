@@ -2,6 +2,7 @@
  * External dependencies
  */
 const request = require('request-promise-native');
+const path = require('path');
 
 /**
  * Internal dependencies
@@ -26,7 +27,7 @@ const saveFile = (file, data) => {
 };
 
 const saveAnalyticsFile = folder => {
-	const file = `${folder}/${ANALYTICS_FILE_NAME}`;
+	const file = path.join(folder, ANALYTICS_FILE_NAME);
 
 	return request(ANALYTICS_SCRIPT_URL)
 		.then(data => saveFile(file, data))
@@ -42,7 +43,7 @@ const saveAnalyticsFile = folder => {
  */
 const localga = options => {
 	const { id, folder } = options;
-	const file = `${folder}/${FILE_NAME}`;
+	const file = path.join(folder, FILE_NAME);
 
 	if (!id) {
 		throw new Error('No google analytics ID supplied.');
@@ -50,7 +51,7 @@ const localga = options => {
 
 	return request(`${GA_SCRIPT_URL}?id=${id}`)
 		.then(async data => {
-			data = data.replace(ANALYTICS_SCRIPT_URL, `${folder}/${ANALYTICS_FILE_NAME}`);
+			data = data.replace(ANALYTICS_SCRIPT_URL, path.join(folder, ANALYTICS_FILE_NAME));
 
 			saveFile(file, data);
 
