@@ -6,12 +6,12 @@ const request = require('request-promise-native');
 /**
  * Internal dependencies
  */
-const { writeFileSync, unlinkSync, existsSync } = require('fs');
+const { writeFileSync, unlinkSync, existsSync, mkdirSync } = require('fs');
+const path = require('path');
 
 /**
  * Google analytics root url
  */
-const FILE_NAME = 'google-analytics-local.js';
 const GA_SCRIPT_URL = 'https://www.googletagmanager.com/gtag/js';
 
 const ANALYTICS_FILE_NAME = 'analytics.js';
@@ -22,11 +22,13 @@ const saveFile = (file, data) => {
 		unlinkSync(file);
 	}
 
+	mkdirSync(path.dirname(file), {recursive: true});
+
 	writeFileSync(file, data);
 };
 
 const saveAnalyticsFile = folder => {
-	const file = `${folder}/${ANALYTICS_FILE_NAME}`;
+	const file = path.join(folder, ANALYTICS_FILE_NAME);
 
 	return request(ANALYTICS_SCRIPT_URL)
 		.then(data => saveFile(file, data))
@@ -41,8 +43,8 @@ const saveAnalyticsFile = folder => {
  * @return {Void}
  */
 const localga = options => {
-	const { id, folder } = options;
-	const file = `${folder}/${FILE_NAME}`;
+	const { id, folder, name } = options;
+	const file = path.join(folder, name);
 
 	if (!id) {
 		throw new Error('No google analytics ID supplied.');
@@ -50,7 +52,7 @@ const localga = options => {
 
 	return request(`${GA_SCRIPT_URL}?id=${id}`)
 		.then(async data => {
-			data = data.replace(ANALYTICS_SCRIPT_URL, `${folder}/${ANALYTICS_FILE_NAME}`);
+			data = data.replace(ANALYTICS_SCRIPT_URL, path.join(folder, ANALYTICS_FILE_NAME));
 
 			saveFile(file, data);
 
@@ -62,5 +64,4 @@ const localga = options => {
 module.exports = localga;
 module.exports.localga = localga;
 
-module.exports.FILE_NAME = FILE_NAME;
 module.exports.ANALYTICS_FILE_NAME = ANALYTICS_FILE_NAME;

@@ -43,14 +43,14 @@ yarn add localga --dev
 
 ```javascript
 "scripts": {
-	"ga": "localga --id UA-XXXXXXXX-Y --folder ./your/js/folder"
+	"ga": "localga --id UA-XXXXXXXX-Y --folder ./your/js/folder --name google-analytics-local.js"
 }
 ```
 
 2. From command line (Install the module globally first):
 
 ```sh
-localga --id UA-XXXXXXXX-Y --folder ./your/js/folder
+localga --id UA-XXXXXXXX-Y --folder ./your/js/folder --name google-analytics-local.js
 ```
 
 The `localga` module will generate two new script files called `google-analytics-local.js` and `analytics.js` placed in the folder you provided.
