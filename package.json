@@ -1,6 +1,6 @@
 {
 	"name": "localga",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"description": "Save a local version of your Google Analytics script",
 	"bin": {
 		"localga": "./cli.js"
