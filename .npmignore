@@ -35,9 +35,11 @@ yarn.lock
 .prettierignore
 
 # Config files
+.whitesource
 renovate.json
 _config.yml
 _.config.yml
 
 # Project specific
+.github
 tmp
