@@ -2,12 +2,12 @@
  * External dependencies
  */
 const request = require('request-promise-native');
-const path = require('path');
 
 /**
  * Internal dependencies
  */
 const { writeFileSync, unlinkSync, existsSync, mkdirSync } = require('fs');
+const path = require('path');
 
 /**
  * Google analytics root url
