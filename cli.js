@@ -1,18 +1,9 @@
 #!/usr/bin/env node
 
-/**
- * External dependencies
- */
 const meow = require('meow');
 
-/**
- * Internal dependencies
- */
 const localga = require('./');
 
-/**
- * CLI settings
- */
 const cli = meow(
 	`
 Options
@@ -35,9 +26,10 @@ Usage Examples
 			name: {
 				type: 'string',
 				default: 'google-analytics-local.js'
-			},
+			}
 		}
 	}
 );
 
+// @ts-ignore
 localga(cli.flags);
