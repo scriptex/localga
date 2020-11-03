@@ -1,6 +1,6 @@
 {
 	"name": "localga",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"description": "Save a local version of your Google Analytics script",
 	"bin": {
 		"localga": "./cli.js"
@@ -23,8 +23,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"meow": "8.0.0",
-		"request": "2.88.2",
-		"request-promise-native": "1.0.9"
+		"node-fetch": "2.6.1"
 	},
 	"devDependencies": {
 		"tape": "5.0.1"
