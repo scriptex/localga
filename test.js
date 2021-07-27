@@ -19,30 +19,28 @@ if (!existsSync(DIR)) {
 	mkdirSync(DIR);
 }
 
-localga({
-	id: 'UA-83446952-1',
-	folder: DIR,
-	name: NAME
-}).then(() => {
+tape('LocalGA unit tests', async t => {
+	await localga({
+		id: 'UA-83446952-1',
+		folder: DIR,
+		name: NAME
+	});
+
+	const masterFile = resolve(__dirname, `${DIR}/${NAME}`);
+	const masterFileExists = existsSync(masterFile);
+
+	const helperFile = resolve(__dirname, `${DIR}/${ANALYTICS_FILE_NAME}`);
+	const helperFileExists = existsSync(helperFile);
+
 	/**
 	 * Test if a master file is created
 	 */
-	tape('Should have a master file', t => {
-		const file = resolve(__dirname, `${DIR}/${NAME}`);
-		const fileExists = existsSync(file);
-
-		t.ok(fileExists, `${NAME} exists`);
-		t.end();
-	});
+	t.ok(masterFileExists, `${NAME} exists`);
 
 	/**
 	 * Test if a helper file is created
 	 */
-	tape('Should have a helper file', t => {
-		const file = resolve(__dirname, `${DIR}/${ANALYTICS_FILE_NAME}`);
-		const fileExists = existsSync(file);
+	t.ok(helperFileExists, `${ANALYTICS_FILE_NAME} exists`);
 
-		t.ok(fileExists, `${ANALYTICS_FILE_NAME} exists`);
-		t.end();
-	});
+	t.end();
 });
