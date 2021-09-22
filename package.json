@@ -23,7 +23,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"meow": "9.0.0",
-		"node-fetch": "2.6.4"
+		"node-fetch": "2.6.5"
 	},
 	"devDependencies": {
 		"tape": "5.3.1"
