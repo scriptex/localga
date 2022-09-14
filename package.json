@@ -1,34 +1,40 @@
 {
 	"name": "localga",
-	"version": "2.2.0",
+	"version": "2.3.0",
 	"description": "Save a local version of your Google Analytics script",
-	"bin": {
-		"localga": "./cli.js"
-	},
 	"keywords": [
 		"GA",
 		"Google Analytics",
-		"Cache",
 		"Page Speed Insights",
-		"Anaylitics",
-		"Google Tag Manager"
+		"Local Analytics",
+		"Offline Analytics",
+		"Local Google Analytics",
+		"Offline Google Analytics"
 	],
-	"main": "./index.js",
-	"repository": "git@github.com:scriptex/localga.git",
+	"homepage": "https://atanas.info/projects/localga.html",
 	"bugs": {
 		"url": "https://github.com/scriptex/localga/issues",
-		"email": "scriptex.bg@gmail.com"
+		"email": "hi@atanas.info"
 	},
-	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
 	"license": "MIT",
+	"author": "Atanas Atanasov <hi@atanas.info> (https://atanas.info)",
+	"funding": "https://github.com/sponsors/scriptex",
+	"main": "./index.js",
+	"bin": {
+		"localga": "./cli.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "github:scriptex/localga"
+	},
+	"scripts": {
+		"test": "rm -rf tmp && tape test.js"
+	},
 	"dependencies": {
 		"meow": "9.0.0",
 		"node-fetch": "2.6.7"
 	},
 	"devDependencies": {
-		"tape": "5.5.3"
-	},
-	"scripts": {
-		"test": "rm -rf tmp && tape test.js"
+		"tape": "5.6.0"
 	}
 }
