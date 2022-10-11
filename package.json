@@ -31,7 +31,7 @@
 		"test": "rm -rf tmp && tape test.js"
 	},
 	"dependencies": {
-		"meow": "9.0.0",
+		"meow": "11.0.0",
 		"node-fetch": "2.6.7"
 	},
 	"devDependencies": {
