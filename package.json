@@ -1,6 +1,6 @@
 {
 	"name": "localga",
-	"version": "2.3.0",
+	"version": "2.3.1",
 	"description": "Save a local version of your Google Analytics script",
 	"keywords": [
 		"GA",
@@ -11,7 +11,7 @@
 		"Local Google Analytics",
 		"Offline Google Analytics"
 	],
-	"homepage": "https://atanas.info/projects/localga.html",
+	"homepage": "https://atanas.info/portfolio/open-source/localga",
 	"bugs": {
 		"url": "https://github.com/scriptex/localga/issues",
 		"email": "hi@atanas.info"
