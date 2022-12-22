@@ -42,6 +42,8 @@ The actual analytics tracking should be done by you and is not part of this pack
 
 ## Install
 
+**This module requires NodeJS v18 or higher.**
+
 ```sh
 npm i localga --save-dev
 ```

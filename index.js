@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 const { join, dirname } = require('path');
 const { writeFileSync, unlinkSync, existsSync, mkdirSync } = require('fs');
 
