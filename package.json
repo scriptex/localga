@@ -1,6 +1,6 @@
 {
 	"name": "localga",
-	"version": "2.3.1",
+	"version": "3.0.0",
 	"description": "Save a local version of your Google Analytics script",
 	"keywords": [
 		"GA",
@@ -23,6 +23,9 @@
 	"bin": {
 		"localga": "./cli.js"
 	},
+	"engines": {
+		"node": ">= 18 || >= 19"
+	},
 	"repository": {
 		"type": "git",
 		"url": "github:scriptex/localga"
@@ -31,8 +34,7 @@
 		"test": "rm -rf tmp && tape test.js"
 	},
 	"dependencies": {
-		"meow": "11.0.0",
-		"node-fetch": "2.6.7"
+		"meow": "11.0.0"
 	},
 	"devDependencies": {
 		"tape": "5.6.1"
