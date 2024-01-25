@@ -37,6 +37,6 @@
 		"meow": "13.1.0"
 	},
 	"devDependencies": {
-		"tape": "5.7.3"
+		"tape": "5.7.4"
 	}
 }
